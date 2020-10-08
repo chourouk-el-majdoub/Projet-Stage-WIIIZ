@@ -13,6 +13,13 @@ CREATE TABLE Wizz.Utilisation (
   UT_Conso_horaire INT(7) NOT NULL,
   UT_Conso_totale INT(7) NOT NULL,
   PRIMARY KEY (UT_ID));
+  
+ALTER TABLE Wizz.Utilisation 
+ADD COLUMN UT_Heure_debut SMALLINT(2) NOT NULL AFTER UT_Conso_totale,
+ADD COLUMN UT_Heure_fin SMALLINT(2) NOT NULL AFTER UT_Heure_debut,
+ADD COLUMN UT_Min_debut SMALLINT(2) NOT NULL AFTER UT_Heure_fin,
+ADD COLUMN UT_Min_fin SMALLINT(2) NOT NULL AFTER UT_Min_debut;
+
 
 CREATE TABLE Wizz.Client (
   CL_ID VARCHAR(45) NOT NULL,
